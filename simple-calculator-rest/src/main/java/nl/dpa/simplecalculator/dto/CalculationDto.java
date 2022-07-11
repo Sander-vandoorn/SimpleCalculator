@@ -5,6 +5,6 @@ import lombok.Getter;
 @Getter
 public class CalculationDto {
 
-    private Integer first;
-    private Integer second;
+    protected Integer first;
+    protected Integer second;
 }

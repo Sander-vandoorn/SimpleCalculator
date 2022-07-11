@@ -2,17 +2,22 @@ package nl.dpa.simplecalculator.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
 @Table(name = "CALCULATION")
+@NoArgsConstructor
 public class Calculation {
 
     public Calculation(Integer first, Integer second, Operand operand) {
         this.first = first;
         this.second = second;
+        this.operand = operand;
+        this.createDatetime = LocalDateTime.now();
     }
 
     @Id
@@ -28,5 +33,8 @@ public class Calculation {
 
     @Column(name = "OPERAND")
     private Operand operand;
+
+    @Column(name = "DATETIME_CREATION")
+    private LocalDateTime createDatetime;
 
 }

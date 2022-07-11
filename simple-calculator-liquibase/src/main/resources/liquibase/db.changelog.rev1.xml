@@ -23,6 +23,10 @@
             <column name="OPERAND" type="VARCHAR(20)">
                 <constraints nullable="false"/>
             </column>
+
+            <column name="DATETIME_CREATION" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>
