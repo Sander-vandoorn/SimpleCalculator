@@ -1,3 +1,3 @@
-<app-calculator-form></app-calculator-form>
-<app-history></app-history>
+<app-calculator-form (updateEvent)="updateHistory()"></app-calculator-form>
+<app-history [update]="update"></app-history>
 <router-outlet></router-outlet>

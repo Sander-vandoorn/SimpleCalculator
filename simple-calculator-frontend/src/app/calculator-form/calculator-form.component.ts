@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { HttpService } from '../shared/http.service'
 import { FormBuilder } from '@angular/forms'
+import { Output, EventEmitter } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -18,6 +19,7 @@ export class CalculatorFormComponent implements OnInit {
     second: 0,
     operand: 'add'
   })
+  @Output() updateEvent = new EventEmitter<boolean>;
 
   constructor(
     private service: HttpService,
@@ -29,7 +31,10 @@ export class CalculatorFormComponent implements OnInit {
   }
 
   calculate(first: number, second: number, operand: string): void {
-    this.service.calculate(first, second, operand).subscribe(res => (this.result = res))
+    this.service.calculate(first, second, operand).subscribe(res => {
+      this.result = res
+      this.updateEvent.emit(true)
+    })
   }
 
   onSubmit(): void {

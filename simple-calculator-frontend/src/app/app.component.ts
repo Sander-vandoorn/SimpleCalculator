@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'simple-calculator-frontend';
+  update = false
+
+  updateHistory(): void {
+    this.update = !this.update
+  }
 }
