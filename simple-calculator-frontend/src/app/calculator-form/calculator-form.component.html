@@ -1,0 +1,30 @@
+<form [formGroup]="inputform" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="first">
+      Eerste nummer
+    </label>
+    <input id="first" type="number" formControlName="first">
+  </div>
+
+  <div>
+    <label for="second">
+      Tweede nummer
+    </label>
+    <input id="second" type="number" formControlName="second">
+  </div>
+
+  <div>
+    <label for="operand">
+      Operand
+    </label>
+    <select id="operand" name="operand" formControlName="operand">
+      <option>add</option>
+      <option>subtract</option>
+      <option>multiply</option>
+      <option>divide</option>
+    </select>
+  </div>
+
+  <button class="button" type="submit">Bereken</button>
+</form>
+<h3>Resultaat: {{result}}</h3>
