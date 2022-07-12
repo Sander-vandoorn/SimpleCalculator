@@ -17,23 +17,31 @@ public class SimpleCalculator {
     }
 
     public Double add(Integer first, Integer second) {
-        Calculation calculation = calculationRepository.save(new Calculation(first, second, Operand.ADD));
-        return calculate(calculation);
+        Calculation calculation = new Calculation(first, second, Operand.ADD);
+        calculation.setResult(calculate(calculation));
+        calculationRepository.save(calculation);
+        return calculation.getResult();
     }
 
     public Double subtract(Integer first, Integer second) {
-        Calculation calculation = calculationRepository.save(new Calculation(first, second, Operand.SUBTRACT));
-        return calculate(calculation);
+        Calculation calculation = new Calculation(first, second, Operand.SUBTRACT);
+        calculation.setResult(calculate(calculation));
+        calculationRepository.save(calculation);
+        return calculation.getResult();
     }
 
     public Double multiply(Integer first, Integer second) {
-        Calculation calculation = calculationRepository.save(new Calculation(first, second, Operand.MULTIPLY));
-        return calculate(calculation);
+        Calculation calculation = new Calculation(first, second, Operand.MULTIPLY);
+        calculation.setResult(calculate(calculation));
+        calculationRepository.save(calculation);
+        return calculation.getResult();
     }
 
     public Double divide(Integer first, Integer second) {
-        Calculation calculation = calculationRepository.save(new Calculation(first, second, Operand.DIVIDE));
-        return calculate(calculation);
+        Calculation calculation = new Calculation(first, second, Operand.DIVIDE);
+        calculation.setResult(calculate(calculation));
+        calculationRepository.save(calculation);
+        return calculation.getResult();
     }
 
     public List<Calculation> history() {

@@ -34,6 +34,9 @@ public class Calculation {
     @Column(name = "OPERAND")
     private Operand operand;
 
+    @Column(name = "RESULT")
+    private Double result;
+
     @Column(name = "DATETIME_CREATION")
     private LocalDateTime createDatetime;
 

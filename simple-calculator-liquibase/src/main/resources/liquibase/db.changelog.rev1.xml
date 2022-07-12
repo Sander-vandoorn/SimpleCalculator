@@ -24,6 +24,10 @@
                 <constraints nullable="false"/>
             </column>
 
+            <column name="RESULT" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+
             <column name="DATETIME_CREATION" type="TIMESTAMP">
                 <constraints nullable="false"/>
             </column>
