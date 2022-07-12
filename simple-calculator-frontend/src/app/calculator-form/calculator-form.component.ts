@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { CalculatorFormService } from './calculator-form.service'
+import { HttpService } from '../shared/http.service'
 import { FormBuilder } from '@angular/forms'
 
 import { Observable } from 'rxjs';
@@ -20,7 +20,7 @@ export class CalculatorFormComponent implements OnInit {
   })
 
   constructor(
-    private service: CalculatorFormService,
+    private service: HttpService,
     private formBuilder: FormBuilder
   ) { }
 
