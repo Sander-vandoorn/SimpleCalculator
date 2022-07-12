@@ -1,0 +1,17 @@
+<h2>Geschiedenis</h2>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Eerste nummer</th>
+    <th>Tweede nummer</th>
+    <th>Operand</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of history">
+      <td>{{record.id}}</td>
+      <td>{{record.first}}</td>
+      <td>{{record.second}}</td>
+      <td>{{record.operand}}</td>
+    </tr>
+  </tbody>
+</table>
